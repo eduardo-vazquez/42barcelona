@@ -1,0 +1,91 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/26 13:47:51 by evazquez          #+#    #+#             */
+/*   Updated: 2023/09/04 16:05:07 by evazquez         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "get_next_line_bonus.h"
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str == NULL)
+		return (0);
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+void	ft_free_malloc(char **str)
+{
+	if (*str != NULL)
+	{
+		free(*str);
+		*str = NULL;
+	}
+}
+
+char	*ft_strjoin(char **str1, char **str2)
+{
+	int		i;
+	int		j;
+	char	*str_new;
+
+	j = 0;
+	str_new = (char *)malloc(sizeof(char) * \
+		(ft_strlen(*str1) + ft_strlen(*str2) + 1));
+	if (str_new == NULL) 
+		return (NULL);
+	i = 0;
+	if (*str1 != NULL)
+	{
+		while ((*str1)[i] != '\0')
+			str_new[i++] = (*str1)[j++];
+		ft_free_malloc(str1);
+	}
+	i = 0;
+	if (*str2 != NULL)
+	{
+		while ((*str2)[i] != '\0')
+			str_new[j++] = (*str2)[i++];
+		ft_free_malloc(str2);
+	}
+	str_new[j] = '\0';
+	return (str_new);
+}
+
+int	ft_find_char_in_str(const char *str, char c)
+{
+	int	i;
+
+	i = 0;
+	if (str == NULL)
+		return (0);
+	while (str[i] != '\0')
+	{
+		if (str[i] == c)
+			return (1);
+		i++;
+	}
+	i = 0;
+	return (i);
+}
+
+void	ft_clean_line(char *line)
+{
+	int	i;
+
+	i = 0;
+	while (line[i] != '\0' && line[i] != '\n')
+		i++;
+	if (line[i] == '\n')
+		line[i + 1] = '\0';
+}
