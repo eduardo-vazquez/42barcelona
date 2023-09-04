@@ -97,6 +97,12 @@ char *ft_clean_line(char *line)
 	if (line[i] == '\n')
 	{
 		str_new = (char *)malloc((i + 2) * sizeof(char));
+		if (str_new == NULL)
+		{
+			free(line);
+			free(str_new);
+			return(NULL);
+		}
 		i = 0;
 		while (line[i] != '\n')
 		{

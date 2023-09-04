@@ -82,17 +82,21 @@ char	*ft_load_rest(char *line)
 
 	j = 0;
 	i = 0;
+	if (line == NULL)
+		return (NULL);
 	while (line[i] != '\n' && line[i] != '\0')
 		i++;
 	if (line[i] == '\n')
+	{
 		i++;
-	if (line[i] == '\0')
+		str = (char *)malloc(ft_strlen(line) - i + 1);
+		if (str == NULL)
+			return (NULL);
+		while (line[i] != '\0')
+			str[j++] = line[i++];
+		str[j] = '\0';
+		return (str);
+	}
+	else if (line[i] == '\0')
 		return (NULL);
-	str = (char *)malloc(ft_strlen(line) - i + 1);
-	if (str == NULL)
-		return (NULL);
-	while (line[i] != '\0')
-		str[j++] = line[i++];
-	str[j] = '\0';
-	return (str);
 }
