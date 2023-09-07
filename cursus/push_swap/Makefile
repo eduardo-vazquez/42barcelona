@@ -6,7 +6,7 @@
 #    By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/07 15:11:52 by evazquez          #+#    #+#              #
-#    Updated: 2023/09/07 16:44:25 by evazquez         ###   ########.fr        #
+#    Updated: 2023/09/07 18:39:39 by evazquez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ PROJECT = push_swap
 #-----------rules--------------------------------------------------------------#
 
 $(NAME): $(OBJECTS)
-	gcc	$(FLAGS) $(OBJECTS) -o $(NAME)
+	@gcc	$(FLAGS) $(OBJECTS) -o $(NAME)
 
 obj/%.o : src/%.c include/$(PROJECT).h
 	@gcc -c $(FLAGS) $< -o $@
