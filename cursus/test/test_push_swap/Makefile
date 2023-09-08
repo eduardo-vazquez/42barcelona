@@ -8,8 +8,8 @@ include utils/format.mk
 
 PROJECT = push_swap
 
-test_FLAGS = -Wall -Werror -Wextra -DBUFFER_SIZE=$(BUFFER_SIZE)
-test_SOURCES :=	$(wildcard ../../$(PROJECT)/*.c) 
+test_FLAGS = -Wall -Werror -Wextra -g
+test_SOURCES :=	$(wildcard ../../$(PROJECT)/src/*.c) 
 test_HEAD = ../../$(PROJECT)/include/$(PROJECT).h
 
 ##header
@@ -17,10 +17,9 @@ LINE_TO_STAR = 23
 
 test = ./test_$(PROJECT).c
 
-#-----------phony targets------------------------------------------------------#
+LIST_NUMBERS = 1 2 3 4 5 6 7 8 9 10
 
-.PHONY : header gcc clang run debug debug-clang normi
-.SILENT : header gcc clang run debug debug-clang normi
+#-----------RULES----------------------------------------------------------------#
 
 header :					#receta que escribe el header
 	sed -i '.h' '$(LINE_TO_STAR),$$d' $(test_HEAD)
@@ -32,36 +31,35 @@ header :					#receta que escribe el header
 	rm $(test_HEAD).h
 	printf "${DEL_LINE}\r${CYAN}hader done${DEL_LINNE}${WHITE}\n"
 
-gcc:							#receta para compilar
-	gcc -g $(test_FLAGS) $(test_SOURCES) $(test)
-	printf "${DEL_LINE}\r${CYAN}compilado con gcc${DEL_LINNE}${WHITE}\n"
+gcc:	#receta para compilar
+	@cd ../../push_swap && $(MAKE)
+
+clean:
+	rm -rf build 
+	cd ../../push_swap && $(MAKE) clean
+
+gcc-debug:
+	mkdir -p build
+	gcc $(test_FLAGS) $(test_SOURCES) -I../../push_swap/include -o ./build/push_swap
 
 clang:							#receta para compilar con clang 
 	clang -DBUFFER_SIZE=$(BUFFER_SIZE) -g -fsanitize=address $(test_SOURCES) $(test)
 	printf "${DEL_LINE}\r${CYAN}compilado con clang y ASan!\
 		${DEL_LINNE}${WHITE}\n"
 
-run: gcc header			#receta para correr el ejecutable
-	printf "${DEL_LINE}\r${CYAN}program output\n==============\n${DEL_LINNE}${WHITE}"
-	./a.out
-	rm a.out
-	printf "${DEL_LINE}\r${CYAN}==============\nend of output${DEL_LINNE}${WHITE}\n"
+run: gcc #header			#receta para correr el ejecutable
+	cd ../../push_swap \
+	&& printf "${DEL_LINE}\r${CYAN}---------------------${DEL_LINNE}${WHITE}\n"\
+	&& ./push_swap $(LIST_NUMBERS) \
+	&& printf "${DEL_LINE}\r${CYAN}---------------------${DEL_LINNE}${WHITE}\n"\
+	&& $(MAKE) clean
 
-debug: gcc  #header 
-	lldb ./a.out -o "b main" -o "r"
+debug: gcc-debug  #header 
+	lldb ./build/push_swap -o "b main" -o "r"
 
 debug-clang:  clang  #header 
 	lldb ./a.out -o "b main" -o "r"
 
-normi :
-	norminette $(test_SOURCES) 
-
-cp :
-	cp -r ./* Makefile *.txt *.c *.h  ../git42/42-get_next_line/
-#	cd  ../git42/42-get_next_line && \
-	git add . && \
-	git commit -m "28.08.23"  && \
-	git push && \
-	echo evazquez && \
-	echo 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
+.PHONY : header gcc clang run debug debug-clang normi
+.SILENT : header gcc clang run debug debug-clang normi
 
