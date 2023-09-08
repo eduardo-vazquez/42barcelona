@@ -12,10 +12,13 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
 ### V.1 The rules
 - You have 2 stacks named a and b.
 - At the beginning:
-	◦ The stack a contains a random amount of negative and/or positive numbers which cannot be duplicated.
-	◦ The stack b is empty.
-- The goal is to sort in ascending order numbers into stack a. To do so you have the
+ The stack a contains a random amount of negative and/or positive numbers which cannot be duplicated.
+	- The stack b is empty.
+	- The goal is to sort in ascending order numbers into stack a. To do so you have the
 following operations at your disposal:
+
+H<sub>2</sub>O es la fórmula del agua.
+
 
 | | | |
 |:--|:--:|:--|
@@ -99,7 +102,7 @@ a b
 |Turn in files | Makefile, *.h, *.c|
 |Makefile | NAME, all, clean, fclean, re|
 |Arguments | stack a: A list of integers|
-|External functs | • read, write, malloc, free, exit, ft_printf and any equivalent, YOU coded|
+|External functs | read, write, malloc, free, exit, ft_printf and any equivalent, YOU coded|
 |Libft authorized | Yes|
 |Description | Sort stacks|
 
