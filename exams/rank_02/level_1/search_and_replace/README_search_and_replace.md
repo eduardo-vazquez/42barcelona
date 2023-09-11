@@ -1,5 +1,5 @@
 Assignment name  : search_and_replace
-Expected files   : search_and_replace.c
+>./search_and_replaceExpected files   : search_and_replace.c
 Allowed functions: write, exit
 --------------------------------------------------------------------------------
 
