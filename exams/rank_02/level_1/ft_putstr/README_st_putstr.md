@@ -1,3 +1,5 @@
+###subject
+```
 Assignment name  : ft_putstr
 Expected files   : ft_putstr.c
 Allowed functions: write
@@ -11,3 +13,4 @@ character.
 Your function must be declared as follows:
 
 void	ft_putstr(char *str);
+```

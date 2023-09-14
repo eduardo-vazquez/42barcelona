@@ -1,3 +1,5 @@
+###subject
+```
 Assignment name  : alpha_mirror
 Expected files   : alpha_mirror.c
 Allowed functions: write
@@ -25,3 +27,4 @@ Nb slihv rh Znzarmt.$
 $>./alpha_mirror | cat -e
 $
 $>
+```
