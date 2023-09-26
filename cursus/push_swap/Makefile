@@ -18,14 +18,15 @@ SOURCES :=	$(wildcard src/*.c)
 
 OBJECTS := $(SOURCES:src/%.c=obj/%.o)
 
-FLAGS = -Wall -Werror -Wextra 
+FLAGS = -Wall -Werror -Wextra -Iinclude
 
 PROJECT = push_swap
 
 #-----------rules--------------------------------------------------------------#
 
 $(NAME): $(OBJECTS)
-	@gcc	$(FLAGS) $(OBJECTS) -o $(NAME)
+	@$(MAKE) -C ./include/libft
+	@gcc $(FLAGS) $(OBJECTS) ./include/libft/libft.a -o $(NAME)
 
 obj/%.o : src/%.c include/$(PROJECT).h
 	@gcc -c $(FLAGS) $< -o $@
