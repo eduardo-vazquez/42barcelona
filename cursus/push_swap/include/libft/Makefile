@@ -6,7 +6,7 @@
 #    By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/28 14:41:20 by evazquez          #+#    #+#              #
-#    Updated: 2023/03/06 10:52:12 by evazquez         ###   ########.fr        #
+#    Updated: 2023/09/27 10:51:34 by evazquez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,20 +32,20 @@ HEAD = libft.h
 all: $(NAME)
 
 $(NAME): $(OBJS) $(OBJS_AD) $(HEAD)
-	$(CC) $(NAME) $(OBJS) $(OBJS_AD) $(HEAD)
+	@$(CC) $(NAME) $(OBJS) $(OBJS_AD) $(HEAD)
 
 bonus: $(OBJS) $(OBJS_AD) $(OBJS_BO) $(HEAD)
-	$(CC) $(NAME) $(OBJS_BO) $(OBJS) $(OBJS_AD)
+	@$(CC) $(NAME) $(OBJS_BO) $(OBJS) $(OBJS_AD)
 
 %.o : %.c
-		$(GCC) -c $(CFLAGS)  $< -o $@
+	@$(GCC) -c $(CFLAGS)  $< -o $@
 
 .PHONY : all clean fclean re rebonus
 clean:
-	$(RM) $(OBJS) $(OBJS_AD) $(OBJS_BO)
+	@$(RM) $(OBJS) $(OBJS_AD) $(OBJS_BO)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 

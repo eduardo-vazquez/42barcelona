@@ -6,7 +6,7 @@
 #    By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/07 15:11:52 by evazquez          #+#    #+#              #
-#    Updated: 2023/09/08 13:59:57 by evazquez         ###   ########.fr        #
+#    Updated: 2023/09/27 18:04:10 by evazquez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ $(NAME): $(OBJECTS)
 	@$(MAKE) -C ./include/libft
 	@gcc $(FLAGS) $(OBJECTS) ./include/libft/libft.a -o $(NAME)
 
-obj/%.o : src/%.c include/$(PROJECT).h
+obj/%.o : src/%.c include/$(PROJECT).h include/libft/libft.h
 	@gcc -c $(FLAGS) $< -o $@
 
 $(OBJECTS) : | obj
@@ -44,10 +44,13 @@ obj:
 all: $(NAME)
 
 clean:
-	rm $(NAME)
-	rm -rf obj bonus/obj_bonus
+	@$(MAKE) -C ./include/libft clean
+	rm -rf obj
 
 fclean: clean
+	@$(MAKE) -C ./include/libft fclean
+	rm $(NAME)
+	
 
 re: fclean all
 
