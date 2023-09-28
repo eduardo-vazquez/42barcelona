@@ -6,7 +6,7 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 15:16:24 by evazquez          #+#    #+#             */
-/*   Updated: 2023/09/27 13:18:40 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:00:17 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,14 @@
 
 typedef struct list
 	{
-		int		value;
-		int 	index;
-		t_list	*next;
+		int			value;
+		int 		index;
+		struct list	*next;
 
-	} t_list;
+	} node;
+
+void	ft_load_nodes(node **head, char **argv, int argc);
+node	*ft_create_node(int value);
+void	ft_append_node(node **head, node *node);
 
 #endif

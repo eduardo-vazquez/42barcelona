@@ -6,11 +6,11 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 13:52:54 by evazquez          #+#    #+#             */
-/*   Updated: 2023/09/28 14:09:05 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:00:16 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft/lift.h"
+#include "../include/libft/libft.h"
 #include "../include/push_swap.h"
 
 node	*ft_create_node(int value)
@@ -26,18 +26,15 @@ node	*ft_create_node(int value)
 	 return (new);
 }
 
-void	ft_append_node(node **head, node *node)
+void	ft_append_node(node **head, node *node_to_add)
 {
-	node	*tmp;
-    if (*head == NULL) {
-        *head = node;
+	node	*tmp_node;
+
+    if (*head == NULL)
         return;
+    tmp_node = *head;
+    while (tmp_node->next != NULL) {
+        tmp_node = tmp_node->next;
     }
-
-    tmp = *head;
-    while (tmp->next != NULL) {
-        tmp = tmp->next;
-    }
-
-    tmp->next = node;
+    tmp_node->next = node_to_add;
 }
