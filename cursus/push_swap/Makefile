@@ -6,7 +6,7 @@
 #    By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/07 15:11:52 by evazquez          #+#    #+#              #
-#    Updated: 2023/09/28 16:00:08 by evazquez         ###   ########.fr        #
+#    Updated: 2023/09/29 19:29:24 by evazquez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SOURCES :=	$(wildcard src/*.c)
 
 OBJECTS := $(SOURCES:src/%.c=obj/%.o)
 
-FLAGS = -Wall -Werror -Wextra -Iinclude
+FLAGS = -Wall -Werror -Wextra -Iinclude -g
 
 PROJECT = push_swap
 
