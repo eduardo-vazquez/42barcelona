@@ -6,13 +6,14 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 15:16:24 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/02 19:59:27 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/03 19:29:29 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-#include <stdio.h>
 
 typedef struct list
 	{
@@ -23,18 +24,31 @@ typedef struct list
 	} node;
 
 void	ft_init_node(node*, int, int, node*);
-void	ft_load_nodes(node **head, char **argv, int argc);
-node	*ft_create_node(int value);
-void	ft_append_node(node **head, node *node);
+void	ft_load_nodes(node*, char**, int);
+node	*ft_create_node(int);
+void	ft_append_node(node *head, node *node);
 
 /* operaciones*/
-void	ft_swap_a(node**);
-void	ft_swap_b(node**);
-void	ft_swap_swap(node**, node**);
-void	ft_push_a(node**, node**);
-void	ft_push_b(node**, node**);
+int		ft_swap(node**);
+void	ft_sa(node**);
+void	ft_sb(node**);
+void	ft_ss(node**);
+
+int		ft_push_node(node**, node**);
+void 	ft_pa(node**);
+void 	ft_pb(node**);
+
+int		ft_rotate_node(node**);
+void	ft_ra(node**);
+void	ft_rb(node**);
+void	ft_rr(node**);
+
+int		ft_reverse_rotate(node**);
+void	ft_rra(node**);
+void	ft_rrb(node**);
+void	ft_rrr(node**);
 
 //ELIMINAR
-void	ft_print_list(node*);
+void ft_print_list(node* head);
 
 #endif

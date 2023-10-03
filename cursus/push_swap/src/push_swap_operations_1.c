@@ -6,69 +6,78 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:29:30 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/02 19:59:31 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/03 19:20:04 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft/libft.h"
 #include "../include/push_swap.h"
 
-//sa (swap a): Swap the first 2 elements at the top of stack a.
-//Do nothing if there is only one or no elements.
-void	ft_swap_a(node **head)
+int	ft_swap(node **head)
 {
 	node	*pt_tmp;
 	
-	if(!*head || !((*head)->next))
-		return;
+	if (!*head || !((*head)->next))
+		return (0);
 	pt_tmp = *head;
 	*head = pt_tmp->next;
 	pt_tmp->next = (*head)->next;
 	(*head)->next = pt_tmp;
-	write(1, "sa\n", 3);
+	return (1);
 }
 
-void	ft_swap_b(node **head)
-{
-	node	*pt_tmp;
-	
-	if(!*head || !((*head)->next))
-		return;
-	pt_tmp = *head;
-	*head = pt_tmp->next;
-	pt_tmp->next = (*head)->next;
-	(*head)->next = pt_tmp;
-	write(1, "sb\n", 3);
-}
-
-void	ft_swap_swap(node **head_a, node **head_b)
-{
-	ft_swap_a(head_a);
-	ft_swap_b(head_b);
-}
-
-void	ft_push_a(node **pp_stack_a, node **pp_stack_b)
+int	ft_push_node(node **pp_stack_a, node **pp_stack_b)
 {
 	node *pt_tmp;
 	node *pt_next;
-	if(!(*pp_stack_b))
-		return;
+	if (!(*pp_stack_b))
+		return (0);
 	pt_tmp = *pp_stack_a;
 	pt_next = (*pp_stack_b)->next;
 	*pp_stack_a = *pp_stack_b;
 	(*pp_stack_a)->next = pt_tmp;
 	*pp_stack_b = pt_next;	
-	write(1, "pa\n", 3);
+	return (1);
 }
 
-void	ft_push_b(node **pp_stack_b, node **pp_stack_a)
+int	ft_rotate_node(node **head)
 {
-	node *pt_tmp;
-	if(!(*pp_stack_a))
-		return;
-	pt_tmp = *pp_stack_b;
-	*pp_stack_b = *pp_stack_a;
-	(*pp_stack_b)->next = pt_tmp;
-	*pp_stack_a = NULL;	
-	write(1, "pb\n", 3);
+	node	*first_node;
+	node	*last_node;
+	node	*penu_node;
+
+	if (!*head || !((*head)->next))
+		return (0);
+	first_node = *head;
+	last_node = *head;
+	while (last_node->next != NULL)
+		last_node = last_node->next;
+	penu_node = *head;
+	while (penu_node->next->next != NULL)
+		penu_node = penu_node->next;
+	*head = first_node->next;
+	last_node->next = first_node;
+	first_node->next = NULL;
+	return (1);
+}
+
+int	ft_reverse_rotate(node **head)
+{
+	node	*first_node;
+	node	*last_node;
+	node	*penu_node;
+
+	if (!*head || !((*head)->next))
+		return (0);
+	first_node = *head;
+	last_node = *head;
+	while (last_node->next != NULL)
+		last_node = last_node->next;
+	penu_node = *head;
+	while (penu_node->next->next != NULL)
+		penu_node = penu_node->next;
+	*head = last_node;
+	(*head)->next = first_node;
+	penu_node->next = NULL;
+	return (1);
 }

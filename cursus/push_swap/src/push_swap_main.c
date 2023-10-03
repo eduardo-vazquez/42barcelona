@@ -6,7 +6,7 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 13:35:43 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/02 19:59:24 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/03 19:29:26 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,36 +16,31 @@
 
 int	main(int argc, char **argv)
 {
-	node *head_stack_a;
-	node *head_stack_b;
+	node *stacks[2];
 
 	if (argc < 2)
 		return (-1);
-	head_stack_a = (node *)malloc(sizeof(node));
-	head_stack_b = (node *)malloc(sizeof(node));
-	ft_load_nodes(&head_stack_a, argv, argc);
-	
-	//ELIMINAR
-	ft_init_node(head_stack_b, 99, 99, NULL);
-	node	*tmp; 
-	tmp = head_stack_a;
+	stacks[0] = (node *)malloc(sizeof(node));
+	stacks[1] = (node *)malloc(sizeof(node));
+	ft_load_nodes(stacks[0], argv, argc);
+
+	//ELIMINAR##################################desde aqui
+	ft_init_node(stacks[1], 99, 99, NULL);
 	
 	//IMPRESION
 	printf("stack a\n");
-	ft_print_list(head_stack_a);
+	ft_print_list(stacks[0]);
 	printf("stack b\n");
-	ft_print_list(head_stack_b);
+	ft_print_list(stacks[1]);
+	printf("\n");
 
-	ft_push_a(&head_stack_b, &head_stack_a);	
-	
+	ft_pb(stacks);
+	ft_rra(stacks);
 	//IMPRESION
 	printf("stack a\n");
-	ft_print_list(head_stack_a);
+	ft_print_list(stacks[0]);
 	printf("stack b\n");
-	ft_print_list(head_stack_b);
-
-
+	ft_print_list(stacks[1]);
 	
-//	tmp = head_stack_a;
 	return (0);
 }
