@@ -6,7 +6,7 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 15:16:24 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/03 19:29:29 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/04 19:49:42 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,25 @@
 # define PUSH_SWAP_H
 
 typedef struct list
-	{
-		int			value;
-		int 		index;
-		struct list	*next;
+{
+	int			value;
+	int 		index;
+	struct list	*next;
 
-	} node;
+} node;
 
 void	ft_init_node(node*, int, int, node*);
 void	ft_load_nodes(node*, char**, int);
 node	*ft_create_node(int);
 void	ft_append_node(node *head, node *node);
+
+/*funciones*/
+int		ft_long_list(node*);
+int		ft_is_sorted(node*);
+
+/*sorting algorithms*/
+void	ft_bubble_sort(node**);
+void	ft_small_sort(node**);
 
 /* operaciones*/
 int		ft_swap(node**);

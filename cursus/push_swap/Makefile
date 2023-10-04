@@ -6,7 +6,7 @@
 #    By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/07 15:11:52 by evazquez          #+#    #+#              #
-#    Updated: 2023/09/29 19:29:24 by evazquez         ###   ########.fr        #
+#    Updated: 2023/10/04 19:49:38 by evazquez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,10 @@ OBJECTS := $(SOURCES:src/%.c=obj/%.o)
 FLAGS = -Wall -Werror -Wextra -Iinclude -g
 
 PROJECT = push_swap
+
+MAX = 2 
+
+NUMS = `ruby -e "puts (1..${MAX}).to_a.shuffle.join(' ')"`
 
 #-----------rules--------------------------------------------------------------#
 
@@ -39,7 +43,7 @@ obj:
 #-----------phony targets------------------------------------------------------#
 
 .PHONY : all clean fclean re
-.SILENT : all clean fclean re obj 
+.SILENT : all clean fclean re obj run
 	
 all: $(NAME)
 
@@ -50,7 +54,8 @@ clean:
 fclean: clean
 	@$(MAKE) -C ./include/libft fclean
 	rm $(NAME)
-	
 
 re: fclean all
 
+run: | all
+	./push_swap ${NUMS} #| wc -l
