@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   push_swap_utils_0.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 13:52:54 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/04 19:49:44 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/05 16:02:19 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,8 @@ void	ft_append_node(node *head, node *node_to_add)
     if (head == NULL)
         return;
     tmp_node = head;
-    while (tmp_node->next != NULL) {
+    while (tmp_node->next != NULL) 
         tmp_node = tmp_node->next;
-    }
     tmp_node->next = node_to_add;
 }
 
@@ -59,12 +58,66 @@ void	ft_load_nodes(node *head, char **argv, int argc)
 	}
 }
 
+void	ft_free_mallocs(node **stacks)
+{
+	node *tmp;
+	node *to_free;
+
+	tmp = stacks[0];
+	while (tmp != NULL)
+	{
+		to_free = tmp;
+		tmp = tmp->next;
+		free(to_free);
+	}
+	tmp = stacks[1];
+	while (tmp != NULL)
+	{
+		to_free = tmp;
+		tmp = tmp->next;
+		free(to_free);
+	}
+
+}
+
+int	ft_largest_value(node *stacks)
+{
+	node	*tmp;
+	int		largest;
+
+	tmp = stacks;
+	largest = 0;
+	while (tmp != NULL)
+	{
+		if (tmp->value > largest)
+			largest = tmp->value;
+		tmp = tmp->next;
+	}
+	return (largest);
+}
+
+int	ft_smallest_value(node *stacks)
+{
+	node	*tmp;
+	int		smallest;
+
+	tmp = stacks;
+	smallest = ft_largest_value(stacks);
+	while (tmp != NULL)
+	{
+		if (tmp->value < smallest)
+			smallest = tmp->value;
+		tmp = tmp->next;
+	}
+	return (smallest);
+}
+
 //ELIMINAR
 void ft_print_list(node* head)
 {
 	printf("head_address %p\n", (void *)&head);
 	if (head == NULL)
-		printf("head_content: vacio");
+		printf("head_content: vacio\n");
 	while (head)
 	{
 		printf("value: %d, index: %d, node_add: %p, next: %p\n", head->value, head->index, (void *)head, (void *)head->next);

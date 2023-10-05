@@ -6,7 +6,7 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:30:29 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/04 19:49:48 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/05 16:02:17 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,46 @@ void	ft_small_sort(node **stacks)
 	ft_pa(stacks);
 	if (stacks[0]->value > stacks[0]->next->value)
 		ft_sa(stacks);
+}
 
+void	ft_somesort(node **stacks)
+{
+	int smallest;
+	int moves;
+	int longitud;
+	node *tmp;
+
+	tmp = stacks[0
+	longitud = ft_long_list(stack[0]);
+	smallest = ft_smallest_value(stack[0]);
+	while (longitud > 0)
+	{
+		
+	}
+}
+
+void	ft_divided_bubble(node **stacks)
+{
+	int 	middle;
+	int		i;
+
+	middle = (ft_smallest_value(stacks[0]) + ft_largest_value(stacks[0])) / 2;
+	i = ft_long_list(stacks[0]) ;
+	while (i >= 0)
+	{
+		if (stacks[0]->value <= middle)
+			ft_pb(stacks);
+		else
+			ft_ra(stacks);
+		i--;
+	}
+	ft_bubble_sort(&stacks[0]);
+	ft_bubble_sort(&stacks[1]);
+	i = middle;
+	while (i > 0)
+	{
+		ft_rrb(stacks);
+		ft_pa(stacks);
+		i--;
+	}
 }
