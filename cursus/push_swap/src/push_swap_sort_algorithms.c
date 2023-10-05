@@ -6,7 +6,7 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:30:29 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/05 16:02:17 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/05 19:16:20 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,17 +63,28 @@ void	ft_small_sort(node **stacks)
 void	ft_somesort(node **stacks)
 {
 	int smallest;
-	int moves;
 	int longitud;
 	node *tmp;
+	int largest;
+	int moves;
 
-	tmp = stacks[0
-	longitud = ft_long_list(stack[0]);
-	smallest = ft_smallest_value(stack[0]);
-	while (longitud > 0)
+	moves = 0;
+	largest = ft_largest_value(stacks[0]);
+	tmp = stacks[0];
+	longitud = ft_long_list(stacks[0]);
+	smallest = ft_smallest_value(stacks[0]);
+	while (0 < ft_long_list(stacks[0]))
 	{
-		
+		//if(ft_int_is_in_list)
+		if (stacks[0]->value == smallest)
+		{
+			ft_pb(stacks);
+			smallest++;
+		}
+		ft_ra(stacks);
 	}
+	while (0 < ft_long_list(stacks[1]))
+		ft_pa(stacks);	
 }
 
 void	ft_divided_bubble(node **stacks)

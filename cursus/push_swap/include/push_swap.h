@@ -6,7 +6,7 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 15:16:24 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/05 16:02:31 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/05 18:58:01 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	ft_small_sort(node**);
 int		ft_smallest_value(node*);
 int		ft_largest_value(node*);
 void	ft_divided_bubble(node**);
+void	ft_somesort(node**);
 
 /* operaciones*/
 int		ft_swap(node**);

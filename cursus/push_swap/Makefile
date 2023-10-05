@@ -6,7 +6,7 @@
 #    By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/07 15:11:52 by evazquez          #+#    #+#              #
-#    Updated: 2023/10/05 16:02:30 by evazquez         ###   ########.fr        #
+#    Updated: 2023/10/05 19:12:59 by evazquez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ FLAGS = -Wall -Werror -Wextra -Iinclude -g
 
 PROJECT = push_swap
 
-MAX = 10
+MAX = 100
 
 NUMS = `ruby -e "puts (1..${MAX}).to_a.shuffle.join(' ')"`
 
