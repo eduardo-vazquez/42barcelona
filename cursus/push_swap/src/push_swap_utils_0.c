@@ -6,7 +6,7 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 13:52:54 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/05 16:02:19 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/06 19:41:02 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,39 @@ void	ft_load_nodes(node *head, char **argv, int argc)
 {
 	int		i;
 	node	*pt_index;
-	i = 1;
+	char	**str_split;
+	int		longitud;
+
+	longitud = 0;
 	pt_index = head;
-	pt_index->value = ft_atoi(argv[i++]);
-	pt_index->index = -1;
-	while (i < argc)
+	if (argc == 2)
 	{
-		pt_index = ft_create_node(ft_atoi(argv[i++]));
-		ft_append_node(head, pt_index);
+		i = 0;
+		str_split = ft_split(argv[1], ' ');
+		while (str_split[i] != NULL)
+			i++;
+		longitud = i;
+		i = 0;
+		pt_index->value = ft_atoi(str_split[i++]);
+		pt_index->index = -1;
+		while (i < longitud)
+		{
+			pt_index = ft_create_node(ft_atoi(str_split[i++]));
+			ft_append_node(head, pt_index);
+		}
 	}
+	if (argc > 3)
+	{
+		i = 1;
+		pt_index->value = ft_atoi(argv[i++]);
+		pt_index->index = -1;
+		while (i < argc)
+		{
+			pt_index = ft_create_node(ft_atoi(argv[i++]));
+			ft_append_node(head, pt_index);
+		}
+	}
+	ft_print_list(head);
 }
 
 void	ft_free_mallocs(node **stacks)

@@ -6,12 +6,73 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:30:29 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/05 19:16:20 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/06 19:40:59 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft/libft.h"
 #include "../include/push_swap.h"
+
+void	ft_radix_sort(node **stacks)
+{
+	//AGREGAR UN IF si es que hay numeros con con terminacion 0 .. 1. ..2 
+	int m;
+	int n;
+	int result;
+	int longitud;
+	m = 10;
+	n = 1;
+	result = 0;
+	while (stacks[0] != NULL)
+	{
+		longitud = ft_long_list(stacks[0]);
+		while (longitud > 0)
+		{
+			if ((stacks[0]->value % m) / n == result)
+			{
+				ft_pb(stacks);
+			}
+			else
+				ft_ra(stacks);
+			longitud--;
+		}
+		result++;
+	}
+	m *= 10;
+	n *= 10;
+	result = 9;
+	while (stacks[1] != NULL)
+	{
+		longitud = ft_long_list(stacks[1]);
+		while (longitud > 0)
+		{
+			if ((stacks[1]->value % m) / n == result)
+				ft_pa(stacks);
+			else
+				ft_rb(stacks);
+			longitud--;
+		}
+		result--;
+	}
+	m *= 10;
+	n *= 10;
+	result = 0;
+	while (stacks[0] != NULL)
+	{
+		longitud = ft_long_list(stacks[0]);
+		while (longitud > 0)
+		{
+			if ((stacks[0]->value % m) / n == result)
+				ft_pb(stacks);
+			else
+				ft_ra(stacks);
+			longitud--;
+		}
+		result++;
+	}
+	while (stacks[1] != NULL)
+		ft_pa(stacks);	
+}
 
 void	ft_bubble_sort(node **stacks)
 {
@@ -86,6 +147,7 @@ void	ft_somesort(node **stacks)
 	while (0 < ft_long_list(stacks[1]))
 		ft_pa(stacks);	
 }
+
 
 void	ft_divided_bubble(node **stacks)
 {
