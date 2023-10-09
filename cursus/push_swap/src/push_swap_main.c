@@ -6,7 +6,7 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 13:35:43 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/06 19:40:56 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/09 17:56:29 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,18 @@ int	main(int argc, char **argv)
 		return (-1);
 	stacks[0] = (node *)malloc(sizeof(node));
 	stacks[1] = NULL;
+	if (ft_is_wrong(argc, argv))
+	{
+ 		fprintf(stderr, "Error\n"); 
+		return (0);
+	}
 	ft_load_nodes(stacks[0], argv, argc);
 	if (ft_is_sorted(stacks[0]))
 		return (0);
-//	if (argc <= 6)
-//		ft_small_sort(stacks);
-//	else
-	ft_radix_sort(stacks);
+	if (argc <= 6)
+		ft_small_sort(stacks);
+	else
+		ft_radix_sort(stacks);
 //		ft_bubble_sort(stacks);
 //	else if (argc <= 101)
 //		ft_bubble_sort(stacks);
@@ -48,7 +53,6 @@ int	main(int argc, char **argv)
 	printf("stack b\n");
 	ft_print_list(stacks[1]);
 */
-	ft_free_mallocs(stacks);
 	return (0);
 }
 
