@@ -1,4 +1,4 @@
-###subject
+### subject
 ```
 Assignment name  : print_bits
 Expected files   : print_bits.c
