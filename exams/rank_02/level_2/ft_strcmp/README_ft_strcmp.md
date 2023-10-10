@@ -1,4 +1,4 @@
-###subject
+### subject
 ```
 Assignment name  : ft_strcmp
 Expected files   : ft_strcmp.c
