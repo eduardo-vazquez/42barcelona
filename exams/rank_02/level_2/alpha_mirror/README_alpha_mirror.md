@@ -1,4 +1,4 @@
-###subject
+### subject
 ```
 Assignment name  : alpha_mirror
 Expected files   : alpha_mirror.c
