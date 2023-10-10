@@ -1,4 +1,4 @@
-###subject
+### subject
 ```
 Assignment name  : camel_to_snake
 Expected files   : camel_to_snake.c
