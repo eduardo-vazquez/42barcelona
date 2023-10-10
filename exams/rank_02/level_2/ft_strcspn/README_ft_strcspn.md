@@ -1,4 +1,4 @@
-###subject
+### subject
 ```
 Assignment name	: ft_strcspn
 Expected files	: ft_strcspn.c
