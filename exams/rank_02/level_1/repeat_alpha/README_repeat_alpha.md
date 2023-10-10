@@ -1,4 +1,4 @@
-###subject
+### subject
 ```
 Assignment name  : repeat_alpha
 Expected files   : repeat_alpha.c
