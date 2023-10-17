@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft/libft.h"
 #include "../include/push_swap.h"
 
 int	ft_long_list(node *list)

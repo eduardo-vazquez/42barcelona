@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft/libft.h"
 #include "../include/push_swap.h"
 
 void	ft_sa(node **stacks)

@@ -10,10 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+#include "../include/libft/libft.h"
+#include <stdio.h>
+#include <limits.h>
 
 typedef struct list
 {
@@ -41,7 +44,8 @@ int		ft_is_sorted(node*);
 // errors_0
 int		ft_is_only_numbers(int, char**);
 int		ft_is_wrong(int, char**);
-
+long	ft_atolong(const char*);
+int		ft_are_there_doubles(int, char**);
 
 /*sorting algorithms*/
 void	ft_bubble_sort(node**);

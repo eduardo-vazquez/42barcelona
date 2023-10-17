@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft/libft.h"
 #include "../include/push_swap.h"
 
 node	*ft_create_node(int value)
