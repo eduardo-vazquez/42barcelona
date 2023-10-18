@@ -6,13 +6,13 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 19:20:57 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/09 17:56:35 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/18 11:43:54 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_long_list(node *list)
+int	ft_count_nodes(node *list)
 {
 	int		longitud;
 	node	*lista;
@@ -39,4 +39,28 @@ int	ft_is_sorted(node *list)
 		list = list->next;
 	}
 	return (1);
+}
+
+long	ft_atolong(const char *str)
+{
+	long	i;
+	long	j;
+
+	i = 0;
+	j = 1;
+	while (*str == ' ' || *str == '\r' || *str == '\t'\
+			|| *str == '\n' || *str == '\v' || *str == '\f')
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			j *= -1;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		i = i * 10 + *str - '0';
+		str++;
+	}
+	return (i * j);
 }

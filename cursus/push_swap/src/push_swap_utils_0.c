@@ -6,7 +6,7 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 13:52:54 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/09 17:56:34 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/18 13:03:29 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ void	ft_load_nodes(node *head, char **argv, int argc)
 			ft_append_node(head, pt_index);
 		}
 	}
-	ft_print_list(head);
 }
 
 void	ft_free_mallocs(node **stacks)
