@@ -6,68 +6,108 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:30:29 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/18 12:43:42 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/19 17:59:29 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+void	ft_quicksort(node **stacks)
+{
+	printf("indice: %d\n", ft_quicksort_range(stacks, 0, 10));
+}
+
+int	ft_quicksort_range(node** stacks, int first, int last)
+{
+	int	index;
+	int pivot;
+	int moves;
+	int min_moves;
+
+	moves = last - first;
+	min_moves = 0;
+	index = first;
+	while (index > 0)
+	{
+		ft_ra(stacks);
+		index--;
+	}
+	pivot = stacks[0]->value;
+	while (moves > 0)
+	{
+		if (stacks[0]->value >= pivot)
+			ft_pb(stacks);
+		else
+		{
+			ft_ra(stacks);
+			min_moves++;
+		}
+		moves--;
+	}
+	printf("pivot: %d\n", pivot);
+	while (stacks[1])
+		ft_pa(stacks);
+	while (min_moves > 0)
+	{
+		ft_rra(stacks);
+		min_moves--;
+	}
+	return (index);
+}
+
 void	ft_radix_sort(node **stacks)
 {
-	//AGREGAR UN IF si es que hay numeros con con terminacion 0 .. 1. ..2 
 	int m;
 	int n;
-	int result;
+	int sorting_digit;
 	int longitud;
 	m = 10;
 	n = 1;
-	result = 0;
+	sorting_digit = 0;
 	while (stacks[0] != NULL)
 	{
 		longitud = ft_count_nodes(stacks[0]);
 		while (longitud > 0)
 		{
-			if ((stacks[0]->value % m) / n == result)
-			{
+			if ((stacks[0]->value % m) / n == sorting_digit)
 				ft_pb(stacks);
-			}
 			else
 				ft_ra(stacks);
 			longitud--;
 		}
-		result++;
+		sorting_digit++;
 	}
 	m *= 10;
 	n *= 10;
-	result = 9;
+	sorting_digit = 9;
 	while (stacks[1] != NULL)
 	{
 		longitud = ft_count_nodes(stacks[1]);
 		while (longitud > 0)
 		{
-			if ((stacks[1]->value % m) / n == result)
+			if ((stacks[1]->value % m) / n == sorting_digit)
 				ft_pa(stacks);
 			else
 				ft_rb(stacks);
 			longitud--;
 		}
-		result--;
+		sorting_digit--;
 	}
 	m *= 10;
 	n *= 10;
-	result = 0;
+	sorting_digit = 0;
 	while (stacks[0] != NULL)
 	{
 		longitud = ft_count_nodes(stacks[0]);
 		while (longitud > 0)
 		{
-			if ((stacks[0]->value % m) / n == result)
+			if ((stacks[0]->value % m) / n == sorting_digit)
 				ft_pb(stacks);
 			else
 				ft_ra(stacks);
 			longitud--;
 		}
-		result++;
+		sorting_digit++;
 	}
 	while (stacks[1] != NULL)
 		ft_pa(stacks);	

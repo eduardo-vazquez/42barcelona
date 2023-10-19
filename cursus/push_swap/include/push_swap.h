@@ -6,7 +6,7 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 15:16:24 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/18 12:50:31 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/19 17:59:33 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int		ft_is_bigger_or_smaller_then_integer(int, char**);
 int		ft_are_there_doubles(int, char**);
 
 /*sorting algorithms*/
+void	ft_quicksort(node**);
+int		ft_quicksort_range(node**, int, int);
 void	ft_bubble_sort(node**);
 void	ft_small_sort(node**);
 void	ft_radix_sort(node **);
