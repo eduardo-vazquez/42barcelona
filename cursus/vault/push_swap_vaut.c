@@ -50,3 +50,62 @@ void	ft_divided_bubble(node **stacks)
 		i--;
 	}
 }
+
+void	ft_radix_sort(node **stacks)
+{
+	int m;
+	int n;
+	int sorting_digit;
+	int longitud;
+	m = 10;
+	n = 1;
+	sorting_digit = 0;
+	while (stacks[0] != NULL)
+	{
+		longitud = ft_count_nodes(stacks[0]);
+		while (longitud > 0)
+		{
+			if ((stacks[0]->value % m) / n == sorting_digit)
+				ft_pb(stacks);
+			else
+				ft_ra(stacks);
+			longitud--;
+		}
+		sorting_digit++;
+	}
+	m *= 10;
+	n *= 10;
+	sorting_digit = 9;
+	while (stacks[1] != NULL)
+	{
+		longitud = ft_count_nodes(stacks[1]);
+		while (longitud > 0)
+		{
+			if ((stacks[1]->value % m) / n == sorting_digit)
+				ft_pa(stacks);
+			else
+				ft_rb(stacks);
+			longitud--;
+		}
+		sorting_digit--;
+	}
+	m *= 10;
+	n *= 10;
+	sorting_digit = 0;
+	while (stacks[0] != NULL)
+	{
+		longitud = ft_count_nodes(stacks[0]);
+		while (longitud > 0)
+		{
+			if ((stacks[0]->value % m) / n == sorting_digit)
+				ft_pb(stacks);
+			else
+				ft_ra(stacks);
+			longitud--;
+		}
+		sorting_digit++;
+	}
+	while (stacks[1] != NULL)
+		ft_pa(stacks);	
+}
+

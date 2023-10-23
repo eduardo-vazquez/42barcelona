@@ -6,7 +6,7 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 13:35:43 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/19 17:59:34 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/23 23:15:26 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,14 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	ft_load_nodes(stacks[0], argv, argc);
-	ft_quicksort(stacks);
-	//if (ft_is_sorted(stacks[0]))
-	//	return (0);
-	//if (ft_count_nodes(stacks[0]) < 3)
-	//	ft_small_sort(stacks);
-	//else if (ft_count_nodes(stacks[0]) < 6)
-	//	ft_bubble_sort(stacks);
-	//else
-	//	ft_radix_sort(stacks);
-
+	if (ft_is_sorted(stacks[0]))
+		return (0);
+	if (ft_count_nodes(stacks[0]) <= 3)
+		ft_small_sort(stacks);
+	else if (ft_count_nodes(stacks[0]) < 6)
+		ft_bubble_sort(stacks);
+	else
+		ft_quicksort(stacks);
 	printf("RESULTADO\n");
 	printf("stack a\n");
 	ft_print_list(stacks[0]);

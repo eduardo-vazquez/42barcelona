@@ -6,7 +6,7 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 13:52:54 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/18 13:03:29 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/23 17:39:39 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@ node	*ft_create_node(int value)
 	 new = (node *)malloc(sizeof(node));
 	 if (new == NULL)
 		 return (NULL);
-	 ft_init_node(new, value, -1, NULL);
+	 ft_init_node(new, value, NULL);
 	 return (new);
 }
 
-void	ft_init_node(node *node_to_init, int value, int index, node *link)
+void	ft_init_node(node *node_to_init, int value, node *link)
 {
 	node_to_init->value = value;
-	node_to_init->index = index;
 	node_to_init->next = link;
 }
 
@@ -60,7 +59,6 @@ void	ft_load_nodes(node *head, char **argv, int argc)
 		longitud = i;
 		i = 0;
 		pt_index->value = ft_atoi(str_split[i++]);
-		pt_index->index = -1;
 		while (i < longitud)
 		{
 			pt_index = ft_create_node(ft_atoi(str_split[i++]));
@@ -71,7 +69,6 @@ void	ft_load_nodes(node *head, char **argv, int argc)
 	{
 		i = 1;
 		pt_index->value = ft_atoi(argv[i++]);
-		pt_index->index = -1;
 		while (i < argc)
 		{
 			pt_index = ft_create_node(ft_atoi(argv[i++]));
@@ -142,7 +139,7 @@ void ft_print_list(node* head)
 		printf("head_content: vacio\n");
 	while (head)
 	{
-		printf("value: %d, index: %d, node_add: %p, next: %p\n", head->value, head->index, (void *)head, (void *)head->next);
+		printf("value: %d \n", head->value);
 		head = head->next;
 	}
 }

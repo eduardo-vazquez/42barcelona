@@ -6,111 +6,43 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:30:29 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/19 17:59:29 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/23 23:15:20 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_quicksort(node **stacks)
+void	ft_quicksort(node **stacks, int start_index, int last_index)
 {
-	printf("indice: %d\n", ft_quicksort_range(stacks, 0, 10));
+	printf("pivot_index: %d\n", ft_quicksort_range(stacks, start_index, last_index));
 }
 
-int	ft_quicksort_range(node** stacks, int first, int last)
+int	ft_quicksort_range(node** stacks, int pivot_index, int last_index)
 {
-	int	index;
-	int pivot;
+	int pivot_value;
 	int moves;
-	int min_moves;
+	int ra_moves;
 
-	moves = last - first;
-	min_moves = 0;
-	index = first;
-	while (index > 0)
+	ra_moves = 0;
+	moves = last_index + 1;
+	while (pivot_index-- > 0)
+		ra_moves += ft_ra(stacks);
+	pivot_value = stacks[0]->value;
+	last_index -= ra_moves;
+	while (last_index >= 0)
 	{
-		ft_ra(stacks);
-		index--;
-	}
-	pivot = stacks[0]->value;
-	while (moves > 0)
-	{
-		if (stacks[0]->value >= pivot)
+		if (stacks[0]->value <= pivot_value)
 			ft_pb(stacks);
 		else
-		{
-			ft_ra(stacks);
-			min_moves++;
-		}
-		moves--;
+			ra_moves += ft_ra(stacks);
+		last_index--;
 	}
-	printf("pivot: %d\n", pivot);
 	while (stacks[1])
-		ft_pa(stacks);
-	while (min_moves > 0)
-	{
-		ft_rra(stacks);
-		min_moves--;
-	}
-	return (index);
-}
-
-void	ft_radix_sort(node **stacks)
-{
-	int m;
-	int n;
-	int sorting_digit;
-	int longitud;
-	m = 10;
-	n = 1;
-	sorting_digit = 0;
-	while (stacks[0] != NULL)
-	{
-		longitud = ft_count_nodes(stacks[0]);
-		while (longitud > 0)
-		{
-			if ((stacks[0]->value % m) / n == sorting_digit)
-				ft_pb(stacks);
-			else
-				ft_ra(stacks);
-			longitud--;
-		}
-		sorting_digit++;
-	}
-	m *= 10;
-	n *= 10;
-	sorting_digit = 9;
-	while (stacks[1] != NULL)
-	{
-		longitud = ft_count_nodes(stacks[1]);
-		while (longitud > 0)
-		{
-			if ((stacks[1]->value % m) / n == sorting_digit)
-				ft_pa(stacks);
-			else
-				ft_rb(stacks);
-			longitud--;
-		}
-		sorting_digit--;
-	}
-	m *= 10;
-	n *= 10;
-	sorting_digit = 0;
-	while (stacks[0] != NULL)
-	{
-		longitud = ft_count_nodes(stacks[0]);
-		while (longitud > 0)
-		{
-			if ((stacks[0]->value % m) / n == sorting_digit)
-				ft_pb(stacks);
-			else
-				ft_ra(stacks);
-			longitud--;
-		}
-		sorting_digit++;
-	}
-	while (stacks[1] != NULL)
-		ft_pa(stacks);	
+		last_index += ft_pa(stacks);
+	pivot_index = ra_moves - 1;
+	while (ra_moves > 0)
+		ra_moves -= ft_rra(stacks);
+	return (pivot_index + 1);
 }
 
 void	ft_bubble_sort(node **stacks)
@@ -149,13 +81,28 @@ void	ft_bubble_sort(node **stacks)
 void	ft_small_sort(node **stacks)
 {
 	if (stacks[0]->value > stacks[0]->next->value)
-		ft_sa(stacks);
-	if (ft_is_sorted(stacks[0]))
-		return;
-	ft_pb(stacks);
-	if (stacks[0]->value > stacks[0]->next->value)
-		ft_sa(stacks);
-	ft_pa(stacks);
-	if (stacks[0]->value > stacks[0]->next->value)
-		ft_sa(stacks);
+	{
+		if (stacks[0]->next->value < stacks[0]->next->next->value)
+		{
+			if (stacks[0]->value > stacks[0]->next->next->value)
+				ft_ra(stacks);
+			else if (stacks[0]->value < stacks[0]->next->next->value)
+				ft_sa(stacks);
+		}
+		else if (stacks[0]->next->value > stacks[0]->next->next->value)
+		{
+			ft_ra(stacks);
+			ft_sa(stacks);
+		}
+	}
+	else if (stacks[0]->value < stacks[0]->next->value)
+	{
+		if (stacks[0]->value > stacks[0]->next->next->value)
+			ft_rra(stacks);
+		else if (stacks[0]->value < stacks[0]->next->next->value)
+		{
+			ft_rra(stacks);
+			ft_sa(stacks);
+		}
+	}	
 }

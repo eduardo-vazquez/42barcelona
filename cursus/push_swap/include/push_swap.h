@@ -6,7 +6,7 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 15:16:24 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/19 17:59:33 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/23 23:15:27 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 typedef struct list
 {
 	int			value;
-	int 		index;
 	struct list	*next;
 
 } node;
@@ -29,7 +28,7 @@ typedef struct list
 
 // utils_0
 node	*ft_create_node(int);
-void	ft_init_node(node*, int, int, node*);
+void	ft_init_node(node*, int, node*);
 void	ft_append_node(node *head, node *node);
 void	ft_load_nodes(node*, char**, int);
 void	ft_free_mallocs(node **stacks);
@@ -53,26 +52,25 @@ void	ft_quicksort(node**);
 int		ft_quicksort_range(node**, int, int);
 void	ft_bubble_sort(node**);
 void	ft_small_sort(node**);
-void	ft_radix_sort(node **);
 
 /* operaciones*/
 int		ft_swap(node**);
-void	ft_sa(node**);
-void	ft_sb(node**);
-void	ft_ss(node**);
+int		ft_sa(node**);
+int		ft_sb(node**);
+int		ft_ss(node**);
 
 int		ft_push_node(node**, node**);
-void 	ft_pa(node**);
-void 	ft_pb(node**);
+int 	ft_pa(node**);
+int		ft_pb(node**);
 
 int		ft_rotate_node(node**);
-void	ft_ra(node**);
-void	ft_rb(node**);
-void	ft_rr(node**);
+int		ft_ra(node**);
+int		ft_rb(node**);
+int		ft_rr(node**);
 
 int		ft_reverse_rotate(node**);
-void	ft_rra(node**);
-void	ft_rrb(node**);
-void	ft_rrr(node**);
+int		ft_rra(node**);
+int 	ft_rrb(node**);
+int		ft_rrr(node**);
 
 #endif

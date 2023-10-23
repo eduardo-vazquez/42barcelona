@@ -6,7 +6,7 @@
 /*   By: evazquez <evazquez@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 17:09:06 by evazquez          #+#    #+#             */
-/*   Updated: 2023/10/18 11:19:38 by evazquez         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:27:50 by evazquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_is_only_numbers(int argc, char** argv)
 			i++;
 		}
 		j++;	
-	}	
+	}
 	return (1);
 }
 
@@ -83,7 +83,7 @@ int	ft_are_there_doubles(int argc, char **argv)
 	int j;
 	char** str_split;
 
-	i = 0;
+	i = 1;
 	j = 0;
 	if (argc > 2)
 	{
@@ -91,19 +91,22 @@ int	ft_are_there_doubles(int argc, char **argv)
 		{
 			j = i + 1;
 			while (argv[j])
-				if (ft_atoi(argv[j++]) == ft_atoi(argv[i]))
+				if (ft_atoi(argv[i]) == ft_atoi(argv[j++]))
 					return (1);
 			i++;
 		}
 	}
-	str_split = ft_split(argv[1], ' ');
-	while (str_split[i])	
+	else
 	{
-		j  = i + 1;
-		while (str_split[j])
-			if (ft_atoi(str_split[i]) == ft_atoi(str_split[j++]))
-				return (1);
-		i++;
+		str_split = ft_split(argv[1], ' ');
+		while (str_split[i])	
+		{
+			j  = i + 1;
+			while (str_split[j])
+				if (ft_atoi(str_split[i]) == ft_atoi(str_split[j++]))
+					return (1);
+			i++;
+		}
 	}
 	return (0);
 }
