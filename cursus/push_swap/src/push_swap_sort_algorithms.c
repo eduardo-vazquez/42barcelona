@@ -14,7 +14,14 @@
 
 void	ft_quicksort(node **stacks, int start_index, int last_index)
 {
-	printf("pivot_index: %d\n", ft_quicksort_range(stacks, start_index, last_index));
+	int pivot_index;
+
+	if (start_index <= last_index)
+	{
+		pivot_index = ft_quicksort_range(stacks, start_index, last_index);
+		ft_quicksort(stacks, pivot_index + 1, last_index);
+		ft_quicksort(stacks, start_index, pivot_index - 1);
+	}
 }
 
 int	ft_quicksort_range(node** stacks, int pivot_index, int last_index)
@@ -31,7 +38,7 @@ int	ft_quicksort_range(node** stacks, int pivot_index, int last_index)
 	last_index -= ra_moves;
 	while (last_index >= 0)
 	{
-		if (stacks[0]->value <= pivot_value)
+		if (stacks[0]->value >= pivot_value)
 			ft_pb(stacks);
 		else
 			ra_moves += ft_ra(stacks);

@@ -48,7 +48,7 @@ int		ft_is_bigger_or_smaller_then_integer(int, char**);
 int		ft_are_there_doubles(int, char**);
 
 /*sorting algorithms*/
-void	ft_quicksort(node**);
+void	ft_quicksort(node**, int, int);
 int		ft_quicksort_range(node**, int, int);
 void	ft_bubble_sort(node**);
 void	ft_small_sort(node**);

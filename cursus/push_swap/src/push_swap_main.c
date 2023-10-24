@@ -33,14 +33,14 @@ int	main(int argc, char **argv)
 	else if (ft_count_nodes(stacks[0]) < 6)
 		ft_bubble_sort(stacks);
 	else
-		ft_quicksort(stacks);
-	printf("RESULTADO\n");
-	printf("stack a\n");
-	ft_print_list(stacks[0]);
-	if (ft_is_sorted(stacks[0]))
-		printf("esta ordenado\n");
-	printf("stack b\n");
-	ft_print_list(stacks[1]);
+		ft_quicksort(stacks, 0, ft_count_nodes(stacks[0]) - 1);
+//	printf("RESULTADO\n");
+//	printf("stack a\n");
+//	ft_print_list(stacks[0]);
+//	if (ft_is_sorted(stacks[0]))
+//		printf("esta ordenado\n");
+//	printf("stack b\n");
+//	ft_print_list(stacks[1]);
 	
 	return (0);
 }
