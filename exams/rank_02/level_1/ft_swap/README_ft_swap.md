@@ -12,3 +12,14 @@ Your function must be declared as follows:
 
 void	ft_swap(int *a, int *b);
 ```
+### code
+```
+void	ft_swap(int *a, int *b)
+{
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+```
