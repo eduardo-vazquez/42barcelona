@@ -1,4 +1,4 @@
-###subject
+### subject
 ```
 Assignment name  : add_prime_sum
 Expected files   : add_prime_sum.c
