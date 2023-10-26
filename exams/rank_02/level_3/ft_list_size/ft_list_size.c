@@ -1,18 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "ft_list_size.h"
-     
-int	ft_list_size(t_list	*begin_list)
-{
-	int		i;
-	t_list	*current;
+#include "ft_list.h"
 
-	i = 0;
-	current = begin_list;
-	while (current != NULL)
-	{
-		i++;
-		current = current->next;
-	}
-	return (i);
+int ft_list_size(t_list* begin_list)
+{
+	if (!begin_list)
+		return (0);
+	else
+		return (ft_list_size(begin_list->next) + 1);
 }

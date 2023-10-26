@@ -44,11 +44,11 @@
 :question: Any of the 15 Functions/Programs Below:
 ```
 [x1] add_prime_sum 
-[  ] epur_str
-[  ] expand_str
-[  ] ft_atoi_base
-[  ] ft_list_size
-[  ] ft_range
+[x3] epur_str
+[x1] expand_str //es muy parecido al proyeto anterior
+[x2] ft_atoi_base
+[x2] ft_list_size
+[x1] ft_range
 [  ] ft_rrange
 [  ] hidenp
 [  ] lcm

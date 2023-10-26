@@ -24,41 +24,37 @@ int	ft_atoi_base(const char *str, int str_base);
 ```
 ### code
 ```
-int	ft_atoi_base(const char *str, int str_base)
+int ft_atoi_base(const char* str, int str_base)
 {
-	int		result;
-	int 	sign;
-	int		valid_input;
-	int		digit;
+	int number;
+	int sign;
+	int tmp_num;
 
-	result = 0;
+	number = 0;
 	sign = 1;
-	valid_input = 1;
+	tmp_num = 0;
 
 	if (*str == '-')
 	{
 		sign = -1;
 		str++;
 	}
-	
-	while (*str && valid_input)
+	while (*str)
 	{
 		if (*str >= '0' && *str <= '9')
-			digit = *str - '0';
+			tmp_num = *str - '0';
 		else if (*str >= 'a' && *str <= 'z')
-			digit = *str - 'a' + 10;
+			tmp_num = *str - 'a' + 10;
 		else if (*str >= 'A' && *str <= 'Z')
-			digit = *str - 'A' + 10;
+			tmp_num = *str - 'A' + 10;
 		else
-			valid_input = 0;
-		if (digit >= str_base)
-			valid_input = 0;
+			return (0);
+		if (tmp_num >= str_base)
+			return (0);
 		else
-			result = result * str_base + digit;
+			number = number * str_base + tmp_num;
 		str++;
 	}
-	if (valid_input == 0)
-		return (0);
-	return (result * sign);
+	return (number * sign);
 }
 ```

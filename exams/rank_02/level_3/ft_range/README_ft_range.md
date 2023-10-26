@@ -1,4 +1,4 @@
-###subjct
+### subject
 ```
 Assignment name  : ft_range
 Expected files   : ft_range.c
@@ -23,21 +23,28 @@ Examples:
 ### code
 ```
 #include <stdlib.h>
-#include <stdio.h>
 
 int	*ft_range(int start, int end)
 {
 	int size;
-	int	i;
-	int	*array;
+	int index;
+	int *array;
 
-	i = 0;
-	size = end - star + 1;;
-	array = (int *)malloc(size * sizeof(int));
-	if (array == NULL)
+	index = 0;
+	if (start < end)
+		size = end - start + 1;
+	else
+		size = start - end + 1;
+	array = (int*)malloc(size * sizeof(int));
+	if (!array)
 		return (NULL);
-	while (i < size)
-		array[i++] = start++;
+	while (index < size)
+	{
+		if (start < end)
+			array[index++] = start++;
+		else
+			array[index++] = start--;
+	}
 	return (array);
 }
 ```
