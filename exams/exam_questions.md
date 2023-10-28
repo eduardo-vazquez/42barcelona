@@ -3,41 +3,41 @@
 ### Question 1 is from Level 1
 :question: Any of the 12 Functions/Programs Below:
 ```
-[  ] first_word
-[  ] fizzbuzz
-[  ] ft_strcpy
-[  ] ft_strlen
-[  ] ft_swap
-[  ] putstr
-[  ] repeat_alpha
-[  ] rev_print
-[  ] rot_13
-[  ] rotone
-[  ] search_and_replace
-[  ] ulstr
+[x1] first_word
+[x1] fizzbuzz
+[x1] ft_strcpy
+[x1] ft_strlen
+[x1] ft_swap
+[x1] putstr
+[x1] repeat_alpha
+[x1] rev_print
+[x1] rot_13
+[x1] rotone
+[x1] search_and_replace
+[x1] ulstr
 ```
 ### Question 2 is from Level 2
 :question: Any of the 20 Functions/Programs Below:
 ```
-[  ] alpha_mirror
-[  ] camel_to_snake
-[  ] do_op
-[  ] ft_atoi
-[  ] ft_strcmp
-[  ] ft_strcspn
-[  ] ft_strdup
-[  ] ft_strpbrk
-[  ] ft_strrev
-[  ] ft_strspn
-[  ] inter
-[  ] is_power_of_2
-[  ] last_word
-[  ] max
-[  ] print_bits
-[  ] reverse_bits
-[  ] snake_to_camel
-[  ] swap_bits
-[  ] union
+[x1] alpha_mirror
+[x1] camel_to_snake
+[x1] do_op
+[x1] ft_atoi
+[x1] ft_strcmp
+[x1] ft_strcspn
+[x1] ft_strdup
+[x1] ft_strpbrk
+[x1] ft_strrev
+[x1] ft_strspn
+[x1] inter
+[x1] is_power_of_2
+[x1] last_word
+[x1] max
+[x1] print_bits
+[x1] reverse_bits
+[x1] snake_to_camel
+[x1] swap_bits
+[x1] union
 [  ] wdmatch ////////////////FALTA////////
 ```
 ### Question 3 is from Level 3
