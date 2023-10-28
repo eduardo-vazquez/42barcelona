@@ -1,3 +1,5 @@
+### subject
+```
 Assignment name  : rstr_capitalizer
 Expected files   : rstr_capitalizer.c
 Allowed functions: write
@@ -25,3 +27,39 @@ seconD tesT A littlE biT   moaR compleX$
    but... thiS iS noT thaT compleX$
      okay, thiS iS thE lasT 1239809147801 buT noT    thE leasT    T$
 $>
+```
+### code
+```
+#include <unistd.h>
+
+
+void ft_rstr_capitalize(char* str)
+{
+	int index = 0;
+
+	while (str[index])
+	{
+		if (str[index] >= 'A' && str[index] <= 'Z')
+			str[index] += 32;
+		if (str[index] >= 'a' && str[index] <= 'z' 	&& (str[index + 1] == ' ' || str[index + 1] == '\t' | str[index +1] == '\0'))
+			str[index] -= 32;
+		write(1, &str[index], 1);
+		index++;
+	}
+}
+
+int main(int argc, char** argv)
+{
+	int index = 1;
+
+	if (argc < 2)
+		return (write(1, "\n", 1));
+	while (index < argc)
+	{
+		ft_rstr_capitalize(argv[index]);
+		write(1, "\n", 1);
+		index++;
+	}
+	return (0);
+}
+```

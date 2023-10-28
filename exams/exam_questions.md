@@ -53,11 +53,11 @@
 [x2] hidenp
 [x2] lcm
 [x3] paramsum
-[  ] pgcd
-[  ] print_hex
-[  ] rstr_capitalizer
-[  ] str_capitalizer
-[  ] tab_mult 
+[x2] pgcd
+[x2] print_hex
+[x2] rstr_capitalizer
+[x3] str_capitalizer
+[x1] tab_mult 
 ```
 ### Question 4 is from Level 4
 :question: Any of the 10 Functions/Programs Below:
