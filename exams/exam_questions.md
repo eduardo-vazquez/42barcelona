@@ -49,10 +49,10 @@
 [x2] ft_atoi_base
 [x2] ft_list_size
 [x1] ft_range
-[  ] ft_rrange
-[  ] hidenp
-[  ] lcm
-[  ] paramsum
+[x2] ft_rrange
+[x2] hidenp
+[x2] lcm
+[x3] paramsum
 [  ] pgcd
 [  ] print_hex
 [  ] rstr_capitalizer
