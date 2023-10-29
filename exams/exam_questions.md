@@ -64,7 +64,7 @@
 ```
 [x1] ft_itoa
 [  ] flood_fill
-[  ] fprime
+[x2] fprime
 [  ] ft_list_foreach
 [  ] ft_list_remove_if
 [  ] ft_split
