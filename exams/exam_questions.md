@@ -62,14 +62,14 @@
 ### Question 4 is from Level 4
 :question: Any of the 10 Functions/Programs Below:
 ```
-[x1] ft_itoa
-[  ] flood_fill
 [x2] fprime
+[x1] ft_itoa
+[x1] ft_split
+[x1] rev_wstr
+[x1] rostring
+[x1] sort_int_tab
+[  ] sort_list
+[  ] flood_fill
 [  ] ft_list_foreach
 [  ] ft_list_remove_if
-[  ] ft_split
-[  ] rev_wstr
-[  ] rostring
-[  ] sort_int_tab
-[  ] sort_list
 ```

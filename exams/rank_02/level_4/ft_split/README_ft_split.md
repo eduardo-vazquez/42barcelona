@@ -18,24 +18,28 @@ char    **ft_split(char *str);
 ### code
 ```
 #include <stdlib.h>
-#include <stdio.h>
 
-char *ft_strncpy(char *s1, char *s2, int n)
+char* ft_strncpy(char* s1, char* s2, int n)
 {
-	int i = -1;
+	int index = 0;
 
-	while (++i < n && s2[i])
-		s1[i] = s2[i];
-	s1[i] = '\0';
+	while (index < n && s2[index])
+	{
+		s1[index] = s2[index];
+		index++;
+	}
+	s1[index] = '\0';
 	return (s1);
 }
 
 char	**ft_split(char *str)
 {
-	int i = 0;
-	int j = 0;
-	int k = 0;
-	int wc = 0;
+	int 	i = 0;
+	int		i_flag = 0;
+	int 	wc = 0;
+	int 	k = 0;
+	char** 	out;
+
 	while (str[i])
 	{
 		while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
@@ -45,19 +49,20 @@ char	**ft_split(char *str)
 		while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
 			i++;
 	}
-	char **out = (char **)malloc(sizeof(char *) * (wc + 1));
+	out = (char**)malloc((wc + 1) * sizeof(char*));
 	i = 0;
 	while (str[i])
 	{
 		while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
 			i++;
-		j = i;
+		i_flag = i;
 		while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
 			i++;
-		if (i > j)
+		if (i > i_flag)
 		{
-			out[k] = (char *)malloc(sizeof(char) * ((i - j) + 1));
-			ft_strncpy(out[k++], &str[j], i - j);
+			out[k] = (char*)malloc((i - i_flag + 1) * sizeof(char));
+			ft_strncpy(out[k], &str[i_flag], i - i_flag);
+			k++;
 		}
 	}
 	out[k] = NULL;
