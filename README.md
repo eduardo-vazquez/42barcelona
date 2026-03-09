@@ -1,9 +1,9 @@
 Here you will find the projects I have developed during my training, ranging from fundamentals of C programming to systems administration and complex algorithms.
 
-## 🚀 About 42
+## About 42
 42 is a disruptive, free, teacher-less programming school based on peer-to-peer learning and gamification. The objective is to develop deep technical skills, as well as the ability to learn how to learn, solve complex problems, and work as a team.
 
-## 📂 Completed Projects
+## Completed Projects
 
 Below is a detail of each of the projects completed in the Common Core:
 
@@ -25,7 +25,7 @@ Client-server communication system to exchange messages using only UNIX signals 
 [**Push_swap**](./push_swap)
 Highly optimized sorting algorithm. The goal is to sort data in a stack with a limited set of instructions and the minimum number of movements.
 
-## 🛠️ Skills Acquired
+## Skills Acquired
 
 Through these projects at **42 Barcelona**, I have consolidated knowledge in:
 
