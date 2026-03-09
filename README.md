@@ -20,7 +20,7 @@ A function that allows reading content from a file descriptor line by line. Effi
 Introduction to virtualization and system administration. Complete configuration of a secure server in a virtual machine.
 
 [**Minitalk**](./minitalk)
-Client-server communication system to exchange messages using only UNIX signals (`SIGUSR1` and `SIGUSR2`). | C | UNIX Signals, Bitwise Operators, Process IDs (PID)
+Client-server communication system to exchange messages using only UNIX signals (`SIGUSR1` and `SIGUSR2`).
 
 [**Push_swap**](./push_swap)
 Highly optimized sorting algorithm. The goal is to sort data in a stack with a limited set of instructions and the minimum number of movements.
