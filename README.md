@@ -1,8 +1,4 @@
-![42 Barcelona Badge](https://img.shields.io/badge/42-Barcelona-000000?style=for-the-badge&logo=42&logoColor=white)
-![Language C Badge](https://img.shields.io/badge/Language-C-A8B9CC?style=for-the-badge&logo=c&logoColor=black)
-![System Badge](https://img.shields.io/badge/System-Unix-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-
-Welcome to my personal repository of the **42 Barcelona** Cursus. Here you will find the projects I have developed during my training, ranging from fundamentals of C programming to systems administration and complex algorithms.
+Here you will find the projects I have developed during my training, ranging from fundamentals of C programming to systems administration and complex algorithms.
 
 ## 🚀 About 42
 42 is a disruptive, free, teacher-less programming school based on peer-to-peer learning and gamification. The objective is to develop deep technical skills, as well as the ability to learn how to learn, solve complex problems, and work as a team.
