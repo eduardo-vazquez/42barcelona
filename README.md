@@ -1,36 +1,36 @@
-# 42 Barcelona - Portfolio de Cursus
+# 42 Barcelona - Cursus Portfolio
 
 ![42 Barcelona Badge](https://img.shields.io/badge/42-Barcelona-000000?style=for-the-badge&logo=42&logoColor=white)
 ![Language C Badge](https://img.shields.io/badge/Language-C-A8B9CC?style=for-the-badge&logo=c&logoColor=black)
 ![System Badge](https://img.shields.io/badge/System-Unix-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
-Bienvenido a mi repositorio personal del Cursus de **42 Barcelona**. Aquí encontrarás los proyectos que he desarrollado durante mi formación, abarcando desde fundamentos de programación en C hasta administración de sistemas y algoritmos complejos.
+Welcome to my personal repository of the **42 Barcelona** Cursus. Here you will find the projects I have developed during my training, ranging from fundamentals of C programming to systems administration and complex algorithms.
 
-## 🚀 Sobre 42
-42 es una escuela de programación disruptiva, gratuita y sin profesores, basada en el aprendizaje entre pares (*peer-to-peer*) y la gamificación. El objetivo es desarrollar habilidades técnicas profundas, así como la capacidad de aprender a aprender, resolver problemas complejos y trabajar en equipo.
+## 🚀 About 42
+42 is a disruptive, free, teacher-less programming school based on peer-to-peer learning and gamification. The objective is to develop deep technical skills, as well as the ability to learn how to learn, solve complex problems, and work as a team.
 
-## 📂 Proyectos Realizados
+## 📂 Completed Projects
 
-A continuación se detalla cada uno de los proyectos completados en el Common Core:
+Below is a detail of each of the projects completed in the Common Core:
 
-| Proyecto | Descripción | Lenguaje | Tecnologías Clave |
+| Project | Description | Language | Key Technologies |
 | :--- | :--- | :---: | :--- |
-| [**Libft**](./libft) | Mi primera librería en C. Re-implementación de funciones estándar de la `libc` (manejo de strings, memoria, listas enlazadas) para uso futuro. | C | `malloc`, `free`, Punteros, Structs |
-| [**ft_printf**](./ft_printf) | Una recreación de la famosa función `printf` de C. Manejo de argumentos variádicos y formateo de salida preciso. | C | `stdarg.h`, Variadic Functions |
-| [**Get Next Line**](./get_next_line) | Función que permite leer contenido de un *file descriptor* línea por línea. Gestión eficiente de buffers y variables estáticas. | C | File Descriptors, Static Variables, Buffer Management |
-| [**Born2beroot**](./born2beroot) | Introducción a la virtualización y administración de sistemas. Configuración completa de servidor seguro en máquina virtual. | Bash | VirtualBox, LVM, SSH, UFW, Sudo Policy, Password Policy |
-| [**Minitalk**](./minitalk) | Sistema de comunicación cliente-servidor para intercambiar mensajes utilizando únicamente señales UNIX (`SIGUSR1` y `SIGUSR2`). | C | UNIX Signals, Bitwise Operators, Process IDs (PID) |
-| [**Push_swap**](./push_swap) | Algoritmo de ordenamiento altamente optimizado. El objetivo es ordenar datos en un stack con un set limitado de instrucciones y el mínimo número de movimientos. | C | Sorting Algorithms, Stack Manipulation, Complexity Analysis |
+| [**Libft**](./libft) | My first C library. Re-implementation of standard `libc` functions (string handling, memory, linked lists) for future use. | C | `malloc`, `free`, Pointers, Structs |
+| [**ft_printf**](./ft_printf) | A recreation of the famous C `printf` function. Handling of variadic arguments and precise output formatting. | C | `stdarg.h`, Variadic Functions |
+| [**Get Next Line**](./get_next_line) | A function that allows reading content from a file descriptor line by line. Efficient management of buffers and static variables. | C | File Descriptors, Static Variables, Buffer Management |
+| [**Born2beroot**](./born2beroot) | Introduction to virtualization and system administration. Complete configuration of a secure server in a virtual machine. | Bash | VirtualBox, LVM, SSH, UFW, Sudo Policy, Password Policy |
+| [**Minitalk**](./minitalk) | Client-server communication system to exchange messages using only UNIX signals (`SIGUSR1` and `SIGUSR2`). | C | UNIX Signals, Bitwise Operators, Process IDs (PID) |
+| [**Push_swap**](./push_swap) | Highly optimized sorting algorithm. The goal is to sort data in a stack with a limited set of instructions and the minimum number of movements. | C | Sorting Algorithms, Stack Manipulation, Complexity Analysis |
 
-## 🛠️ Habilidades Adquiridas
+## 🛠️ Skills Acquired
 
-A través de estos proyectos en **42 Barcelona**, he consolidado conocimientos en:
+Through these projects at **42 Barcelona**, I have consolidated knowledge in:
 
-*   **Programación de Bajo Nivel**: Gestión manual de memoria (Heap vs Stack), aritmética de punteros y manipulación de bits.
-*   **Algoritmia y Estructuras de Datos**: Diseño eficiente de algoritmos de ordenamiento y uso de listas enlazadas.
-*   **Sistemas Operativos Unix**: Comportamiento de procesos, señales, descriptores de archivos y scripting en Bash.
-*   **Ingeniería de Software**: Uso de `Makefile` para compilación automatizada, control de versiones con Git/GitHub y depuración con `lldb`/`gdb`.
-*   **Administración de Sistemas**: Seguridad de servidores, particionado LVM y configuraciones de red.
+*   **Low-Level Programming**: Manual memory management (Heap vs Stack), pointer arithmetic, and bit manipulation.
+*   **Algorithms and Data Structures**: Efficient design of sorting algorithms and usage of linked lists.
+*   **Unix Operating Systems**: Process behavior, signals, file descriptors, and Bash scripting.
+*   **Software Engineering**: Use of `Makefile` for automated compilation, version control with Git/GitHub, and debugging with `lldb`/`gdb`.
+*   **Systems Administration**: Server security, LVM partitioning, and network configurations.
 
 ---
-*Este repositorio es un reflejo de mi constancia y evolución como desarrollador.*
+*This repository is a reflection of my perseverance and evolution as a developer.*
