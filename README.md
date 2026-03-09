@@ -1,5 +1,3 @@
-# 42 Barcelona - Cursus Portfolio
-
 ![42 Barcelona Badge](https://img.shields.io/badge/42-Barcelona-000000?style=for-the-badge&logo=42&logoColor=white)
 ![Language C Badge](https://img.shields.io/badge/Language-C-A8B9CC?style=for-the-badge&logo=c&logoColor=black)
 ![System Badge](https://img.shields.io/badge/System-Unix-FCC624?style=for-the-badge&logo=linux&logoColor=black)
@@ -32,5 +30,3 @@ Through these projects at **42 Barcelona**, I have consolidated knowledge in:
 *   **Software Engineering**: Use of `Makefile` for automated compilation, version control with Git/GitHub, and debugging with `lldb`/`gdb`.
 *   **Systems Administration**: Server security, LVM partitioning, and network configurations.
 
----
-*This repository is a reflection of my perseverance and evolution as a developer.*
