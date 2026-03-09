@@ -11,14 +11,23 @@ Welcome to my personal repository of the **42 Barcelona** Cursus. Here you will 
 
 Below is a detail of each of the projects completed in the Common Core:
 
-| Project | Description | Language | Key Technologies |
-| :--- | :--- | :---: | :--- |
-| [**Libft**](./libft) | My first C library. Re-implementation of standard `libc` functions (string handling, memory, linked lists) for future use. | C | `malloc`, `free`, Pointers, Structs |
-| [**ft_printf**](./ft_printf) | A recreation of the famous C `printf` function. Handling of variadic arguments and precise output formatting. | C | `stdarg.h`, Variadic Functions |
-| [**Get Next Line**](./get_next_line) | A function that allows reading content from a file descriptor line by line. Efficient management of buffers and static variables. | C | File Descriptors, Static Variables, Buffer Management |
-| [**Born2beroot**](./born2beroot) | Introduction to virtualization and system administration. Complete configuration of a secure server in a virtual machine. | Bash | VirtualBox, LVM, SSH, UFW, Sudo Policy, Password Policy |
-| [**Minitalk**](./minitalk) | Client-server communication system to exchange messages using only UNIX signals (`SIGUSR1` and `SIGUSR2`). | C | UNIX Signals, Bitwise Operators, Process IDs (PID) |
-| [**Push_swap**](./push_swap) | Highly optimized sorting algorithm. The goal is to sort data in a stack with a limited set of instructions and the minimum number of movements. | C | Sorting Algorithms, Stack Manipulation, Complexity Analysis |
+[**Libft**](./libft)
+My first C library. Re-implementation of standard `libc` functions (string handling, memory, linked lists) for future use.
+
+[**ft_printf**](./ft_printf) 
+A recreation of the famous C `printf` function. Handling of variadic arguments and precise output formatting.
+
+[**Get Next Line**](./get_next_line)
+A function that allows reading content from a file descriptor line by line. Efficient management of buffers and static variables.
+
+[**Born2beroot**](./born2beroot)
+Introduction to virtualization and system administration. Complete configuration of a secure server in a virtual machine.
+
+[**Minitalk**](./minitalk)
+Client-server communication system to exchange messages using only UNIX signals (`SIGUSR1` and `SIGUSR2`). | C | UNIX Signals, Bitwise Operators, Process IDs (PID)
+
+[**Push_swap**](./push_swap)
+Highly optimized sorting algorithm. The goal is to sort data in a stack with a limited set of instructions and the minimum number of movements.
 
 ## 🛠️ Skills Acquired
 
