@@ -1,5 +1,3 @@
-Here you will find the projects I have developed during my training, ranging from fundamentals of C programming to systems administration and complex algorithms.
-
 ## About 42
 42 is a disruptive, free, teacher-less programming school based on peer-to-peer learning and gamification. The objective is to develop deep technical skills, as well as the ability to learn how to learn, solve complex problems, and work as a team.
 
