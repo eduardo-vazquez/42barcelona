@@ -27,9 +27,13 @@ Highly optimized sorting algorithm. The goal is to sort data in a stack with a l
 
 Through these projects at **42 Barcelona**, I have consolidated knowledge in:
 
-*   **Low-Level Programming**: Manual memory management (Heap vs Stack), pointer arithmetic, and bit manipulation.
-*   **Algorithms and Data Structures**: Efficient design of sorting algorithms and usage of linked lists.
-*   **Unix Operating Systems**: Process behavior, signals, file descriptors, and Bash scripting.
-*   **Software Engineering**: Use of `Makefile` for automated compilation, version control with Git/GitHub, and debugging with `lldb`/`gdb`.
-*   **Systems Administration**: Server security, LVM partitioning, and network configurations.
+**Low-Level Programming**: Manual memory management (Heap vs Stack), pointer arithmetic, and bit manipulation.
+
+**Algorithms and Data Structures**: Efficient design of sorting algorithms and usage of linked lists.
+
+**Unix Operating Systems**: Process behavior, signals, file descriptors, and Bash scripting.
+
+**Software Engineering**: Use of `Makefile` for automated compilation, version control with Git/GitHub, and debugging with `lldb`/`gdb`.
+
+**Systems Administration**: Server security, LVM partitioning, and network configurations.
 
